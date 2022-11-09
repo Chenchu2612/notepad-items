@@ -1,0 +1,12 @@
+git config --edit --global
+how to ignore files on git
+git ignore
+git commit -m 
+git status
+git branch branch name
+git checkout branch name
+git merdge
+git log
+git branch -d branchname
+git branch --merged
+git branch --no-merged

@@ -1,0 +1,129 @@
+django rest frame work
+
+Rest framework api url creation(rest api)
+
+200,201,400,401,402,403,404,
+
+500,501,502.
+
+demo_app
+
+#models
+
+step 01:- creat models
+
+tables: UsersDetails,Department,Location
+
+create fields:
+
+save tables in postgresql
+
+commends:- makemigrations,migrate
+
+check postgres:-by default 10 tables will be come and our tables
+
+
+#VIEWS:- views contains some business logic
+
+step 01: creating APIVIEWS purpose of CRUD(creat,read,update,delete)operations
+         we are creating class based views.      [there is 2 types of APIviews 1)class based view, 2)functions based view]
+
+step 02: creat http methods(get,post,put,delete)
+          http responces status codes(200,201,401,403,500)
+
+
+
+
+#Serializers:- python objects(models) to converts into json format.
+
+step 01: creat serializers in app
+
+step 02: we create serializers for models(tables)
+
+
+
+
+
+#admin.py:- user interface
+
+step 01: we can import models in admin.py from app
+
+step 02: we can regester models
+
+
+
+
+#urls.py:- mapping to views 
+
+step 01: first we creat urls.py file in app
+
+step 02: we import views in urls.py
+
+step 03: creat and map url patterns
+
+
+#creat super user:- perpose of login and access for admin
+
+step 01: python manage.py createsuperuser
+         in cmd after we get username and password
+
+step 02: py manage.py runserver
+
+
+#demo_project
+
+#urls.py
+
+step 01: we add demo_app in project urls
+
+
+
+
+#demo_app
+
+#adding some modifiactions
+
+#Serializers:- 
+
+we are creat method name like:- def to_representation(self.instance):
+
+we are printing hod username(string relates)
+
+
+
+
+#in end point urls:
+
+when we give id in end point url we get the details from table
+
+
+#url:
+
+we can write <int:pk> in urlpatters
+
+
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'status': 'success'}, status=status.HTTP_200_OK)
+	 else:
+            return Response({'status': 'error', 'data': serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+
+
+    def post(self, request):
+        request_data = request.data
+        email = request_data.get('email')
+        name = request_data.get('name')
+        adress = request_data.get('adress')
+        subject = request_data.get('subject')
+        experience = request_data.get('experience')
+        if Teacher.objects.filter(email=email):
+            return Response({'error': f'user already exist with this email: {email}'}, status=400)
+        teacher_obj = Teacher.objects.create(email=email, name=name, adress=adress, subject=subject,
+                                             experience=experience)
+        teacher_obj.save()
+        return Response({'status': 'Success'}, status=200)
+
+
+
+

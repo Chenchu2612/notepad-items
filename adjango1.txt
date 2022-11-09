@@ -1,0 +1,109 @@
+rest framework:
+
+restframework makes superesay for developers to create ,maintain restful apis 
+
+we can create restful apis using class based views and function based views
+
+this views are helps to do curd operations ......for our own custom code we can use function based view
+if we want to write our own business logic then we shod go for custom based views
+
+if we want to do only crud operations we can go for class based views
+if we want to do our own funcuinality along with crud we can go for function basd views
+
+2.serilizers: these are classes wich can convert the various forms(xml,json,csv) of data 
+into the python object this python object saves as database models...
+
+3.orm.
+
+4.web browsable API:to check the api
+
+5.security:
+a) authentication
+b)authorization
+c)Oauth
+
+6. extensive documentation
+
+
+
+install restframework:
+pip install djangorestframework.
+add rest_framework  in app.
+
+step1:
+from django.http import JsonResponse
+create function in the views:
+
+def empView(request):
+	a={
+	'name':'chenchu',
+	'age':27
+	}
+	return jsonResponse(a)
+
+
+step2: configure Url and test
+   
+path
+
+here we created static content .... if we want dynamic content ....follow the bellow...
+
+
+step1:
+
+create the model & migrate
+insert data in that model.
+str(self): the main function of this str is returns the string representation of the object of the class printed on the console
+step2:
+in views.
+
+from myapp.models import modelname
+
+def chenchu(request):
+	data=modelname.objects.all()
+	response ={'employee':list(data.values('name','sal'))}
+	return jsonResponse(response)
+
+
+step3:
+
+map to url and reunserver
+
+
+
+pip list 
+This is one of the most important command that every Python developer must know. The pip list command returns the list of packages in the current environment. It also returns the installed version for each package. Packages are listed in a case-insensitive sorted order.
+
+
+pip list  returns a list of all packages. However, for some reason we may also want to list all the packages that are currently outdated. To do so, we can use the pip list -o or pip list --outdated command, which returns a list of packages with the version currently installed and the latest available.
+
+
+On the other hand, to list out all the packages that are up to date, we can use the pip list -u or pip list --uptodate command.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

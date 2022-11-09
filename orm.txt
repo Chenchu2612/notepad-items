@@ -1,0 +1,104 @@
+bharath thippi django
+
+
+a= emp.objects.all()
+print(type(a)) == querry set
+
+b= emp.objects.get(id=1)
+print(b.firstname)
+
+print(a.query) ==print the query
+
+c= emp.objects.filter(salary__gt=50000)
+
+
+gt,gte,lt,lte,contains,icontains,in,srartswith,endswith
+
+d= epm.objets.get(firstname__contains="chenchu")
+
+d=epm.objets.get(firstname__icontains="chenchu")
+
+
+d=emp.objects.filter(id__in[1,2])
+
+
+logical operators and ,or ,not 
+Q,|,&, ,
+
+
+only selected coloums:
+
+emp.objects.all().values_list('firstname','salary')
+emp.objects.all().values('firstname','salary')
+emp.objects.all()only('firstname','salary')
+
+there is no difference between values_list and values 
+but there is one difference between values and only ......only returns the id also but values not
+ 
+aggrigate functions:
+
+to use aggrigate functions we have to import it from django data base.
+from django.db.models import avg,sum,max,min,count
+a=emp.objects.all().aggregate(avg('salary")
+here we have to use the aggregate funtion ...inside aggrigate function we have to mention the aggregarefunction.
+
+
+no of objects :
+
+emp.objects.all().count()
+
+add:
+e=emp(firstname='jhon',lastname='bailey',salary=10000)
+e.save()
+
+(or)
+
+e=emp.objects.create(firstname='jhon',lastname='bailey',salary=10000)
+here no need to save()...it automatically saves
+
+
+
+bulk insert or create:
+
+emp.objects.all.bulk_create([(firstname='jhon',lastname='bailey',salary=10000),(firstname='hon',lastname='iley',salary=10000),(firstname='jhn',lastname='biley',salary=10000)])
+
+
+delect the records:
+
+to delete one record:
+
+e=employee.objects.get(id=1)
+e.delete()
+returns the ====>>>(1,{'empapp.emp':1}) ....it returns count and  the deleted object in the form of tuple in the dictionary
+
+a=emp.objects.filter(salary__gt=4000)
+a.delete()
+
+to delete the all the records in the table ====emp.objects.all().delete()
+
+update operation:
+
+a=emp.objects.get(id=2)# to featch the data
+emp.firstname='newname'
+emp.save()
+
+
+orderby or sort the data
+
+a=emp.objects.all().order_by('salary')---it will provides asending order
+a=emp.objects.all().order_by('-salary')---it will provides desending order
+a=emp.objects.all().order_by('-salary')---it will provides desending order[0]----returns first record after sort 
+we can sort based on alphabets
+
+a=emp.objects.all().order_by('firstname')
+
+
+to ignore case sensitive
+
+we have to import lower function
+
+from django.db.models.functions import Lower
+
+a=emp.objects.all().order_by(Lower('firstname');;;>>>it converts all the letters into lowercase and sorts it ....
+
+

@@ -1,0 +1,44 @@
+Git Installation
+Git Installation and setup Reference Doc: https://phoenixnap.com/kb/how-to-install-git-windows#ftoc-heading-10
+
+What is Github?
+GitHub, Inc. is a provider of Internet hosting for software development and version control using Git. It offers the distributed version control and source code management (SCM) functionality of Git, plus its own features. It provides access control and several collaboration features such as bug tracking, feature requests, task management, continuous integration and wikis for every project
+What is git?
+Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows.
+Git commands:
+To clone the code from github into local copy the github url.
+Open terminal or cmd or git bash and run below command
+git clone paste_the_url_here
+Git Morning commands: 
+Merge the Pull Request (PR) in Github (created yesterday)
+git checkout master
+git pull origin master
+git checkout -b new-branch-name
+git branch
+This command shows the created branch name
+Do your changes in the current branch
+Git Evening commands:
+git status
+git add file-name
+git commit -m “some message”
+git branch
+                       It shows current branch name
+git push origin branch-name
+Now open github and go to your latest branch and create Pull Request (PR) with the master branch.
+
+—-------------------------------------------------------------------------
+
+
+MySql Database
+Reference Document: https://www.javatpoint.com/mysql-create-database
+
+DB creds:
+User name: root
+Password: narendra1552
+Host: localhost:3306
+
+DB User :
+User name: Narendra_1997
+Password: narendra1552
+Host: localhost:3306
+

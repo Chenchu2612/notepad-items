@@ -1,0 +1,74 @@
+pip install package_name
+pip uninstall package_name
+py -m pip install --upgrade pip
+pip list
+pip freeze
+py --version
+pip --version
+django-admin --version
+python manage.py --version
+pip install django -U
+pip install django==specific version
+
+
+1. create virtuval environment for python:
+
+a) find python directory:
+type python in cmd>import sys>sys.prefix
+this comand will show in which directory path python is installed.
+
+b)to create virtuval environment
+> python3 -m venv (environment name)
+
+c) to activate virtuval environment
+.\virtuval environment name\Scripts\activate
+
+d) to deactivate viruval environmnt
+(virtuval environment name) C:\Users\yoges\insidePython environment> deactivate
+
+step to install django:::
+
+to install dzango:
+pip install django
+
+to start project:
+django-admin startproject (project_name)
+to check project installed or not:
+py manage.py runserver (to check weather instralled or not)
+it will give url and post in the google rocket will go up.
+
+start_app:
+django-admin startapp (appname)
+
+create virtuval environment:
+python -m venv (virtuvalenvironment name)
+
+activate virtuvalenvironment:
+.\virtuvaal environment name\Scripts\activate
+
+
+create superuser:
+py manage.py create superuser
+
+
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
+pip install psycopg2 
+# adding the postgresql settings 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'real_estate', # name of the database
+        'USER': 'postgres', # username of the databasee 
+        'PASSWORD': '12345', #password of your postgresql app
+        'HOST': 'localhost' # name of the host
+    }
+}
+
+py manage.py shell:
+from django.db import connection
+c=connection.cursor()
+c
+(if it comes without any error we connects the sequre connection)
+or we can check with py manage.py runserver command

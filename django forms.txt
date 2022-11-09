@@ -1,0 +1,46 @@
+FORMS:
+
+it is nothing but to collect data fraom the end_user and processing it
+
+user forms:
+1.create the form
+2.use the form in the view
+3.create the html that uses the form
+4.configure CSRF Token
+5.forms in action
+6.collecting from data in the view
+
+
+step1:
+
+configure the template in the settings.py in the project
+
+step2:
+ we have to open a forms.py file in the app
+
+in forms app:
+
+from django import forms
+
+class UserReg(forms.Form): 
+	firstname=forms.charfield()
+	lastname=forms.charfield()
+	email =forms
+	
+it is similar to the creation of the models 
+
+
+CSRF: cross site request forgery  
+{%csrf_token%}
+
+ 
+2. use the form in the view:
+in views
+from myapp import forms
+
+def userregistrationview(request):
+	a=forms.UserReg
+	return render(request,'projectname/functionname.html',{'form':form})
+
+3. create html in the templaplate.
+open the forms and open new html file in that form 
